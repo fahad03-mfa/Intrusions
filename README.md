@@ -77,24 +77,19 @@ __9. Implementation of GUI:__
 
 __10. Source Directory Tree:__
 
-    IT352_Project/
-    ├── main.py
-    ├── model_train.ipynb
-    ├── output/
-    │   └── prediction.txt
-    ├── models/
-    │   ├── model_gray (1).h5
-    │   └── model_rgb (1).h5
-    │   └── model_rgb.h5
-    │   └── model_rgb.h5
-    ├── scaler.joblib
-    ├── static/
-    │   └── images/
-    │       ├── generated_gray.png
-    │       └── generated_rgb.png
-    └── templates/
-        └── index.html
-
+   iot-5g-intrusion-detection/
+├── app/
+│   ├── main.py
+│   ├── templates/
+│   └── static/
+├── notebooks/
+│   └── training.ipynb
+├── models/
+├── data_samples/
+├── results/
+├── README.md
+├── requirements.txt
+└── .gitignore
 
 
 
