@@ -1,0 +1,10 @@
+Flask
+numpy
+matplotlib
+scipy
+pandas
+joblib
+tensorflow==2.15.0
+opencv-python-headless
+Gunicorn
+tensorrt
