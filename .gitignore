@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Generated outputs
+output/
+static/images/generated_*.png
+
+# Models and datasets (large files)
+*.h5
+*.keras
+*.joblib
+*.csv
+
+# OS files
+.DS_Store
+Thumbs.db
