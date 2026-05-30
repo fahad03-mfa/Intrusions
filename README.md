@@ -1,96 +1,132 @@
+# IoT & 5G Intrusion Detection System using Deep Learning
 
-# A cognitive security framework for detecting intrusions in IoT and 5G utilizing deep learning
+## Overview
+A deep-learning based intrusion detection system designed for IoT and 5G environments. The project transforms network-flow features into RGB and grayscale image representations and uses convolutional neural networks to classify traffic as BENIGN or ATTACK.
 
-This contains Python scripts that we've developed to  preprocessing data, particularly focusing on scaling, label encoding, and handling class imbalance using techniques like SMOTE and RandomUnderSampler. The code is designed for use in machine learning , particularly classification tasks.
+## Key Features
+- Network intrusion detection for IoT and 5G traffic
+- CICIDS and UNSW-NB15 dataset support
+- Data preprocessing and feature scaling
+- Class imbalance handling using SMOTE and undersampling
+- Feature-to-image conversion (RGB and Grayscale)
+- CNN-based classification models
+- Flask web application for inference
+- Ensemble prediction strategy
 
+## Project Architecture
+```text
+Network Traffic CSV
+        |
+        v
+Data Preprocessing
+(Scaling + Cleaning)
+        |
+        v
+Feature Transformation
+(RGB / Grayscale Images)
+        |
+        v
+Deep Learning Models
+        |
+        v
+Ensemble Prediction
+        |
+        v
+Flask Web Application
+```
 
+## Datasets
+- CICIDS 2017
+- CICIDS 2018
+- UNSW-NB15
 
+These datasets contain normal and malicious network traffic samples used for cybersecurity research and intrusion detection.
 
+## Methodology
+### 1. Data Preprocessing
+- Feature scaling using MinMaxScaler
+- Label encoding
+- Binary classification conversion (Attack vs Benign)
 
+### 2. Class Balancing
+- SMOTE oversampling
+- Random undersampling
 
+### 3. Feature Visualization
+Network-flow features are transformed into:
+- RGB images
+- Grayscale images
 
-##  Code Description
+### 4. Deep Learning Classification
+Two CNN models are used:
+- RGB Model
+- Grayscale Model
 
-__1. Importing necessary libraries:__ sklearn.preprocessing.OneHotEncoder, LabelEncoder, and MinMaxScaler for data preprocessing. imblearn for handling class imbalance.Counter for counting occurrences of each class.
+### 5. Ensemble Learning
+Predictions from both models are combined to improve robustness.
 
-
-__2. Data Loading and Exploration__ 
-With the help of Pandas, it reads CSV files which includes  CICIDS-2017, 2018 and UNSW-NB15 datasets, aggregates data frames, and provides an initial overview of the dataset distributions.
-
-__3. Visualizing:__
-        After the importing the data visualizinr the data that has the classes types of the attack.
-        
-         BENIGN                        2271320
-         DoS Hulk                       230124
-         PortScan                       158804
-         DDoS                           128025
-         DoS GoldenEye                   10293
-         FTP-Patator                      7935
-         SSH-Patator                      5897
-         DoS slowloris                    5796
-         DoS Slowhttptest                 5499
-         Bot                              1956
-         Web Attack � Brute Force         1507
-         Web Attack � XSS                  652
-         Infiltration                       36
-         Web Attack � Sql Injection         21
-         Heartbleed                         11
-__4. Preprocessing Data:__
-       Converting all classes into two classes whether attack or not.Scaling the features using MinMaxScaler. Encoding categorical labels using LabelEncoder.
-
-
-__5 . Class Imbalance Handling:__
-Utilizing SMOTE (Synthetic Minority Over-sampling Technique) for oversampling minority classes.Using RandomUnderSampler for undersampling majority classes.
-
-__6 . After the Preprocessing Visualizing the dataset__
-After class balancing, the instances per label in test set are as follows-
-
-     	BENIGN          	567830
-     	attack	          139139
-Printing the shape of the training and testing sets after preprocessing.Displaying the distribution of instances per label in both the training and testing sets.Creating a dictionary mapping class labels to numerical values.
-
-__7. RGB and grayscale images:__
-
- a). This  demonstrates how to convert numerical features into visual representations for analysis and visualization purposes.
-
- b). Normalizes input features using min-max normalization to scale values between 0 and 1.
-
- c). Converts normalized features to RGB images by mapping them to 24-bit numbers and extracting RGB components.
-
-d).Converts normalized features to grayscale images by scaling values up to 255.
-
-e). Combines normalization and mapping functions to generate RGB and grayscale images from input data.
-
-__8.Pre-trained Models Conversion to TensorFlow.js:__ 
-This code provides a simple method to convert pre-trained models saved in the HDF5 format ( .h5) using Keras into the TensorFlow.js format.
-
-    There are two models: 
-    model_gray (1).h5
-    model_rgb (1).h5
-__9. Implementation of GUI:__
-     After saving the models we implemented the GUI for the Models. That consist two parts: 
-     1. Frontend 
-     2. Backend
-
-    1.Frontend: For the Frontend we use HTML,CSS.
-    2.Backend: Used the flask and python.
-
-__10. Source Directory Tree:__
-
-   iot-5g-intrusion-detection/
+## Repository Structure
+```text
+Intrusions/
 ├── app/
-│   ├── main.py
-│   ├── templates/
-│   └── static/
-├── notebooks/
-│   └── training.ipynb
+│   ├── preprocessing.py
+│   ├── image_converter.py
+│   └── main.py
+├── templates/
+├── static/
 ├── models/
-├── data_samples/
+├── notebooks/
 ├── results/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
 
+## Running the Project
+```bash
+git clone https://github.com/fahad03-mfa/Intrusions.git
+cd Intrusions
+pip install -r requirements.txt
+python main.py
+```
 
+## Results
+Add your measured values here.
 
+| Metric | RGB Model | Grayscale Model | Ensemble |
+|----------|----------|----------|----------|
+| Accuracy | XX.XX% | XX.XX% | XX.XX% |
+| Precision | XX.XX% | XX.XX% | XX.XX% |
+| Recall | XX.XX% | XX.XX% | XX.XX% |
+| F1 Score | XX.XX% | XX.XX% | XX.XX% |
 
+## Screenshots
+Add screenshots of:
+- Home page
+- CSV upload page
+- Generated RGB image
+- Generated Grayscale image
+- Prediction page
+
+## Future Improvements
+- Real-time network monitoring
+- Explainable AI integration
+- Transformer-based intrusion detection
+- Cloud deployment
+- Docker support
+- REST API endpoints
+
+## Tech Stack
+- Python
+- Flask
+- TensorFlow / Keras
+- NumPy
+- Pandas
+- Scikit-learn
+- Matplotlib
+- Joblib
+
+## Author
+Mohammed Fahad Altamash
+
+If you found this project useful, consider giving the repository a star.
