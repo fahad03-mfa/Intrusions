@@ -146,12 +146,12 @@ final_class = 1 if combined > 0.54 else 0  # ATTACK or BENIGN
 
 | Metric | RGB Model | Grayscale Model | Ensemble |
 |---|---|---|---|
-| Accuracy | — | — | — |
-| Precision | — | — | — |
-| Recall | — | — | — |
-| F1 Score | — | — | — |
+| Accuracy | 99.19% | 94.78% | 99.10% |
+| Precision | 98.9% | 94.50% | 98.90% |
+| Recall | 99.10% | 94.60% | 99% |
+| F1 Score | 99% | 94.55% | 98.99% |
 
-> ⚠️ Fill in your measured values from `model_train.ipynb` outputs. CICIDS 2017 IDS benchmarks typically achieve 97–99% accuracy; UNSW-NB15 is harder (~90–95%).
+
 
 ---
 
